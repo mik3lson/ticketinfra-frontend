@@ -15,7 +15,7 @@
             </h1>
 
             <p class="mt-4 max-w-xl text-base text-white/70 sm:text-lg">
-              Stripe-grade operations, Linear-like clarity, and Eventbrite-inspired visual polish for organizers who care about conversion.
+              A premium ticketing workspace built to help organizers launch, manage, and scale event checkouts with confidence.
             </p>
           </div>
 
