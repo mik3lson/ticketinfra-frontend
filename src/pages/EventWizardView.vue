@@ -9,7 +9,7 @@ const router = useRouter()
 const builderStore = useBuilderStore()
 const step = ref(1)
 const form = reactive({
-  eventName: 'tickeInfra Summit 2026',
+  eventName: 'ticketInfra Summit 2026',
   description: 'A premium event experience for organizers and attendees.',
   venue: 'Landmark Event Centre',
   category: 'Technology',

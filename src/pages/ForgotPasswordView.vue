@@ -2,7 +2,7 @@
 import { reactive } from 'vue'
 import AuthCard from '@/components/auth/AuthCard.vue'
 
-const form = reactive({ email: 'organizer@tickeinfra.africa' })
+const form = reactive({ email: 'organizer@ticketinfra.africa' })
 
 function submit() {
   window.alert(`Password reset link sent to ${form.email}`)

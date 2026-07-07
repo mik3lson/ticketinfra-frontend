@@ -44,7 +44,7 @@ watch(
             {{ avatarLabel }}
           </div>
           <div class="hidden sm:block">
-            <div class="text-sm font-semibold text-slate-900">{{ authStore.user?.name || 'tickeInfra User' }}</div>
+            <div class="text-sm font-semibold text-slate-900">{{ authStore.user?.name || 'ticketInfra User' }}</div>
             <div class="text-xs text-slate-500">{{ authStore.user?.role || 'Organizer' }}</div>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()
 const authStore = useAuthStore()
-const form = reactive({ email: 'organizer@tickeinfra.africa', password: 'password123' })
+const form = reactive({ email: 'organizer@ticketinfra.africa', password: 'password123' })
 
 function submit() {
   authStore.login({ name: 'Amina Yusuf', email: form.email })
@@ -18,7 +18,7 @@ function submit() {
   <AuthCard>
     <div class="mb-8">
       <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#f05537]">Welcome back</p>
-      <h2 class="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Sign in to tickeInfra</h2>
+      <h2 class="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Sign in to ticketInfra</h2>
       <p class="mt-2 text-sm text-slate-500">Manage events, checkout flows, and payments from one clean workspace.</p>
     </div>
 
