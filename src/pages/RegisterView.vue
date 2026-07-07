@@ -6,7 +6,7 @@ import { useAuthStore } from '@/stores/auth'
 
 const router = useRouter()
 const authStore = useAuthStore()
-const form = reactive({ name: 'Amina Yusuf', email: 'organizer@gatepass.africa', password: 'password123' })
+const form = reactive({ name: 'Amina Yusuf', email: 'organizer@tickeinfra.africa', password: 'password123' })
 
 function submit() {
   authStore.register(form)
@@ -19,7 +19,7 @@ function submit() {
     <div class="mb-8">
       <p class="text-xs font-semibold uppercase tracking-[0.24em] text-[#f05537]">Get started</p>
       <h2 class="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Create your organizer account</h2>
-      <p class="mt-2 text-sm text-slate-500">Set up GatePass and start publishing event checkouts in minutes.</p>
+      <p class="mt-2 text-sm text-slate-500">Set up tickeInfra and start publishing event checkouts in minutes.</p>
     </div>
 
     <form class="space-y-4" @submit.prevent="submit">

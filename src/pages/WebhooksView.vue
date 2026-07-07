@@ -10,7 +10,7 @@ import PageHeader from '@/components/ui/PageHeader.vue'
       <div class="grid gap-4 lg:grid-cols-2">
         <div class="rounded-[28px] bg-slate-50 p-5">
           <div class="text-sm font-semibold text-slate-950">Webhook endpoint</div>
-          <div class="mt-2 break-all rounded-2xl bg-white px-4 py-3 font-mono text-sm text-slate-700">https://api.yourdomain.com/webhooks/gatepass</div>
+          <div class="mt-2 break-all rounded-2xl bg-white px-4 py-3 font-mono text-sm text-slate-700">https://api.tickeinfra.africa/webhooks</div>
         </div>
         <div class="rounded-[28px] bg-slate-50 p-5">
           <div class="text-sm font-semibold text-slate-950">Delivery health</div>

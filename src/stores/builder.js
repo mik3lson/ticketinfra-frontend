@@ -22,7 +22,7 @@ export const useBuilderStore = defineStore('builder', () => {
   const notification = ref('')
 
   const selectedComponent = computed(() => components.value.find((component) => component.id === selectedComponentId.value) ?? null)
-  const checkoutUrl = computed(() => `https://checkout.gatepass.africa/c/${publishCode.value}`)
+  const checkoutUrl = computed(() => `https://checkout.tickeinfra.africa/c/${publishCode.value}`)
   const selectedTicketTotal = computed(() => ticketOptions.value.reduce((sum, ticket) => sum + ticket.price * ticket.quantity, 0))
 
   function selectComponent(componentId) {

@@ -120,7 +120,7 @@ export const defaultCheckoutComponents = [
     type: 'banner',
     visible: true,
     content: {
-      title: 'GatePass Summit 2026',
+      title: 'tickeInfra Summit 2026',
       subtitle: 'Powered by premium ticket infrastructure',
       image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
     },
@@ -131,7 +131,7 @@ export const defaultCheckoutComponents = [
     type: 'logo',
     visible: true,
     content: {
-      title: 'GatePass',
+      title: 'tickeInfra',
       image: 'https://dummyimage.com/120x120/111111/ffffff&text=GP',
     },
     style: { backgroundColor: '#ffffff', textColor: '#111111', borderRadius: '20', padding: '12', margin: '0', fontSize: '16', fontWeight: '700', align: 'left', buttonColor: '#f05537' },
@@ -182,7 +182,7 @@ export const defaultCheckoutComponents = [
     id: 'contact',
     type: 'contact',
     visible: true,
-    content: { title: 'Need help?', subtitle: 'support@gatepass.africa' },
+    content: { title: 'Need help?', subtitle: 'support@tickeinfra.africa' },
     style: { backgroundColor: '#ffffff', textColor: '#111111', borderRadius: '18', padding: '12', margin: '0', fontSize: '15', fontWeight: '500', align: 'left', buttonColor: '#f05537' },
   },
   {
@@ -203,13 +203,13 @@ export const defaultCheckoutComponents = [
     id: 'footer',
     type: 'footer',
     visible: true,
-    content: { title: 'Secure checkout powered by GatePass' },
+    content: { title: 'Secure checkout powered by tickeInfra' },
     style: { backgroundColor: '#ffffff', textColor: '#69707d', borderRadius: '18', padding: '12', margin: '0', fontSize: '13', fontWeight: '400', align: 'center', buttonColor: '#f05537' },
   },
 ]
 
 export const checkoutTemplate = {
-  companyName: 'GatePass',
+  companyName: 'tickeInfra',
   coverImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=80',
   brandColor: '#f05537',
   backgroundColor: '#ffffff',

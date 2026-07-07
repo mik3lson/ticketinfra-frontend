@@ -5,7 +5,7 @@ import PageHeader from '@/components/ui/PageHeader.vue'
 
 <template>
   <div class="space-y-6 py-6">
-    <PageHeader eyebrow="Access" title="API Keys" subtitle="Manage test and live keys for your GatePass integrations." />
+    <PageHeader eyebrow="Access" title="API Keys" subtitle="Manage test and live keys for your tickeInfra integrations." />
 
     <div class="grid gap-4 xl:grid-cols-2">
       <article v-for="key in apiKeys" :key="key.label" class="gatepass-card rounded-[32px] p-6">

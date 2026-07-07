@@ -6,7 +6,7 @@ import TopBar from './TopBar.vue'
 
 const route = useRoute()
 const sidebarOpen = ref(false)
-const pageTitle = computed(() => route.meta.title || 'GatePass')
+const pageTitle = computed(() => route.meta.title || 'tickeInfra')
 
 watch(
   () => route.fullPath,

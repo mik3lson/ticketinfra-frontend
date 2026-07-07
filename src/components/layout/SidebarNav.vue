@@ -23,7 +23,7 @@ defineEmits(['close'])
           GP
         </div>
         <div>
-          <div class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">GatePass</div>
+          <div class="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">tickeInfra</div>
           <div class="text-xs text-slate-400">Dashboard</div>
         </div>
       </div>

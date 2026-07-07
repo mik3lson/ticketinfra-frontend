@@ -7,7 +7,7 @@ const builderStore = useBuilderStore()
 
 <template>
   <div class="space-y-6 py-6">
-    <PageHeader eyebrow="Workspace" title="Settings" subtitle="Customize the GatePass brand and checkout defaults." />
+    <PageHeader eyebrow="Workspace" title="Settings" subtitle="Customize the tickeInfra brand and checkout defaults." />
 
     <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
       <section class="gatepass-card rounded-[32px] p-6">
@@ -27,7 +27,7 @@ const builderStore = useBuilderStore()
         <h2 class="text-lg font-semibold text-slate-950">Preview</h2>
         <div class="mt-5 rounded-[28px] border border-black/5 p-4" :style="{ backgroundColor: builderStore.branding.backgroundColor, fontFamily: builderStore.branding.font }">
           <div class="rounded-[24px] bg-[#0f1115] p-4 text-white">
-            <div class="text-xs uppercase tracking-[0.24em] text-white/60">GatePass Checkout</div>
+            <div class="text-xs uppercase tracking-[0.24em] text-white/60">tickeInfra Checkout</div>
             <div class="mt-2 text-2xl font-semibold">Premium branding controls</div>
             <p class="mt-2 text-sm text-white/70">Changes apply instantly across the checkout builder and branded surfaces.</p>
             <button class="mt-4 rounded-2xl px-4 py-3 text-sm font-semibold text-white" :style="{ backgroundColor: builderStore.branding.buttonColor }">Save changes</button>

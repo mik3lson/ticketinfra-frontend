@@ -9,11 +9,11 @@ const route = useRoute()
 const builderStore = useBuilderStore()
 
 const code = computed(() => route.params.code || builderStore.publishCode)
-const checkoutUrl = computed(() => `https://checkout.gatepass.africa/c/${code.value}`)
+const checkoutUrl = computed(() => `https://checkout.tickeinfra.africa/c/${code.value}`)
 const apiEndpoint = '/checkout-session'
 const linkEmbed = `<a href="${checkoutUrl.value}">Buy Ticket</a>`
 const iframeEmbed = `<iframe src="${checkoutUrl.value}" width="100%" height="800" style="border:0"></iframe>`
-const sdkEmbed = `GatePass.openCheckout("${code.value}")`
+const sdkEmbed = `tickeInfra.openCheckout("${code.value}")`
 </script>
 
 <template>
@@ -21,7 +21,7 @@ const sdkEmbed = `GatePass.openCheckout("${code.value}")`
     <PageHeader
       eyebrow="Publish complete"
       title="Checkout published successfully"
-      subtitle="Share the live checkout URL, connect the API endpoint, or embed GatePass into any website."
+      subtitle="Share the live checkout URL, connect the API endpoint, or embed tickeInfra into any website."
     />
 
     <div class="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
@@ -78,7 +78,7 @@ const sdkEmbed = `GatePass.openCheckout("${code.value}")`
       <aside class="gatepass-card rounded-[32px] p-6">
         <div class="rounded-[28px] bg-gradient-to-br from-[#111111] via-[#17191f] to-[#f05537] p-6 text-white">
           <div class="text-xs uppercase tracking-[0.25em] text-white/60">Live checkout</div>
-          <div class="mt-3 text-3xl font-semibold tracking-tight">GatePass</div>
+          <div class="mt-3 text-3xl font-semibold tracking-tight">tickeInfra</div>
           <p class="mt-3 text-sm text-white/75">A premium checkout surface ready for events, funnels, and ticketing operations.</p>
         </div>
 
