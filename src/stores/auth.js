@@ -1,76 +1,70 @@
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
-
-const STORAGE_KEY = 'gatepass-session'
-
-function readSession() {
-  if (typeof window === 'undefined') {
-    return null
-  }
-
-  const raw = window.localStorage.getItem(STORAGE_KEY)
-
-  if (!raw) {
-    return null
-  }
-
-  try {
-    return JSON.parse(raw)
-  } catch {
-    return null
-  }
-}
+import * as authService from '@/services/auth.service'
 
 export const useAuthStore = defineStore('auth', () => {
-  const session = ref(readSession())
+  const user = ref(null)
+  const initialized = ref(false) // true once we've checked for an existing session
+  const loading = ref(false)
+  const error = ref('')
 
-  const user = computed(() => session.value?.user ?? null)
-  const isAuthenticated = computed(() => Boolean(session.value?.token))
+  const isAuthenticated = computed(() => Boolean(user.value))
 
-  function persist(nextSession) {
-    session.value = nextSession
-
-    if (typeof window === 'undefined') {
-      return
+  
+  async function init() {
+    if (initialized.value) return
+    try {
+      user.value = await authService.fetchCurrentUser()
+    } catch {
+      user.value = null
+    } finally {
+      initialized.value = true
     }
+  }
 
-    if (nextSession) {
-      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(nextSession))
-    } else {
-      window.localStorage.removeItem(STORAGE_KEY)
+  async function login({ email, password }) {
+    loading.value = true
+    error.value = ''
+    try {
+      user.value = await authService.login({ email, password })
+      return true
+    } catch (err) {
+      error.value = err.data?.detail || 'Incorrect email or password.'
+      return false
+    } finally {
+      loading.value = false
     }
   }
 
-  function login(payload) {
-    persist({
-      token: 'gatepass-demo-token',
-      user: {
-        name: payload.name || 'Amina Yusuf',
-        email: payload.email,
-        role: 'Organizer',
-      },
-    })
+  async function register({ businessName, email, password }) {
+    loading.value = true
+    error.value = ''
+    try {
+      user.value = await authService.register({ businessName, email, password })
+      return true
+    } catch (err) {
+      error.value = err.data?.detail || 'Could not create your account. Check your details and try again.'
+      return false
+    } finally {
+      loading.value = false
+    }
   }
 
-  function register(payload) {
-    persist({
-      token: 'gatepass-demo-token',
-      user: {
-        name: payload.name,
-        email: payload.email,
-        role: 'Organizer',
-      },
-    })
-  }
-
-  function logout() {
-    persist(null)
+  async function logout() {
+    try {
+      await authService.logout()
+    } finally {
+      user.value = null
+    }
   }
 
   return {
-    session,
     user,
+    initialized,
+    loading,
+    error,
     isAuthenticated,
+    init,
     login,
     register,
     logout,

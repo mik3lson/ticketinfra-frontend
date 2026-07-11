@@ -13,9 +13,9 @@ import CheckoutBuilderView from '@/pages/CheckoutBuilderView.vue'
 import OrdersView from '@/pages/OrdersView.vue'
 import CustomersView from '@/pages/CustomersView.vue'
 import ApiKeysView from '@/pages/ApiKeysView.vue'
-import WebhooksView from '@/pages/WebhooksView.vue'
 import SettingsView from '@/pages/SettingsView.vue'
 import PublishSuccessView from '@/pages/PublishSuccessView.vue'
+
 
 const routes = [
   {
@@ -30,7 +30,6 @@ const routes = [
       { path: 'orders', name: 'orders', component: OrdersView },
       { path: 'customers', name: 'customers', component: CustomersView },
       { path: 'api-keys', name: 'api-keys', component: ApiKeysView },
-      { path: 'webhooks', name: 'webhooks', component: WebhooksView },
       { path: 'settings', name: 'settings', component: SettingsView },
       { path: 'publish/:code', name: 'publish', component: PublishSuccessView, props: true },
     ],
@@ -55,8 +54,13 @@ const router = createRouter({
   },
 })
 
-router.beforeEach((to) => {
+router.beforeEach(async (to) => {
   const authStore = useAuthStore()
+
+  
+  if (!authStore.initialized) {
+    await authStore.init()
+  }
 
   if (authStore.isAuthenticated && to.meta.public) {
     return { name: 'dashboard' }
@@ -67,7 +71,7 @@ router.beforeEach((to) => {
   }
 
   if (!authStore.isAuthenticated) {
-    return { name: 'login' }
+    return { name: 'login', query: { redirect: to.fullPath } }
   }
 
   return true

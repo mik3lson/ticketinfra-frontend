@@ -5,7 +5,6 @@ export const sidebarLinks = [
   { label: 'Customers', to: '/customers' },
   { label: 'Checkout Builder', to: '/checkout-builder' },
   { label: 'API Keys', to: '/api-keys' },
-  { label: 'Webhooks', to: '/webhooks' },
   { label: 'Settings', to: '/settings' },
 ]
 
@@ -88,7 +87,7 @@ export const apiKeys = [
 export const notifications = [
   { title: '224 tickets sold in the last hour', meta: 'Revenue climbed by 18%' },
   { title: 'Checkout link published for Product Design Summit', meta: '2 minutes ago' },
-  { title: 'Webhooks retried successfully', meta: 'No failures detected' },
+  { title: 'Payout scheduled for Founder Night', meta: 'Arriving in 2 business days' },
 ]
 
 export const builderPalette = [
